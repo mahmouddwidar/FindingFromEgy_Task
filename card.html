@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>figma Card</title>
+    <style>
+        @property --Color1 {
+            syntax: '<color>';
+            initial-value: lightblue;
+            inherits: false;
+        }
+
+        @property --Color2 {
+            syntax: '<color>';
+            initial-value: darkblue;
+            inherits: false;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: red;
+            border-radius: 15px;
+            background: linear-gradient(var(--Color1), var(--Color2));
+            transition: box-shadow 3s, --Color1 3s, --Color2 3s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, .3);
+                cursor: pointer;
+                --Color1: darkblue;
+                --Color2: lightblue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card"></div>
+</body>
+
+</html>
